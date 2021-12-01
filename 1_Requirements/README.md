@@ -74,9 +74,9 @@ HIGH LEVEL REQUIREMENTS:
 |ID   |       DESCRIPTION                                                         |
 |---- |---------------------------------------------------------------------------|
 |HR01 |                                                                           |
-|HR02 |         Number of vehicles entering the parking area                      |
-|HR03 |          Number of vehicles leaving the parking area                      |
-|HR04 |         Parking charges for a vehicle                                     |
+|HR02 |                                                                           |
+|HR03 |                                                                           |
+|HR04 |                                                                           |
 
 
 LOW LEVEL REQUIREMENTS:
@@ -84,8 +84,8 @@ LOW LEVEL REQUIREMENTS:
 
 |ID     |                            DESCRIPTION                                                             |
 |------ |----------------------------------------------------------------------------------------------------|
-|LR01   |            The system will ask input from the user whether it is a two wheeler or a four wheeler   | 
-|LR02   |            Security is high                                                                        |
+|LR01   |                                                                                                    | 
+|LR02   |                                                                                                    |
 
 
 

@@ -26,7 +26,7 @@ DEFINING THE SYSTEM:
 ---------------------
 WHO :
 --------------
-Parking area Mangement
+Vehicle drivers
 
 WHAT:
 ------------------
@@ -34,7 +34,7 @@ Help drivers when parking their vehicles in a parking area.
 
 WHERE:
 --------------------
-Can be used in any parking area 
+Can be used in vehicles. 
 
 WHEN:
 -------------------
@@ -59,11 +59,11 @@ STRENGTHS:
 
 OPPORTUNITY:
 -------------------
-Can be implemented in any parking system.
+Can be implemented in any vehicle.
 
 THREATS:
 --------------------------
-
+Syatem failure may cause collision of vehicles.
 
 
 
@@ -71,19 +71,21 @@ DETAIL REQUIREMENTS:
 -------------------------
 HIGH LEVEL REQUIREMENTS:
 ----------------------------
-ID               DESCRIPTION
-HR01          User will be able to check the availability of parking space
-HR02          Number of vehicles entering the parking area
-HR03          Number of vehicles leaving the parking area
-HR04         Parking charges for a vehicle 
+|ID   |       DESCRIPTION                                                         |
+|---- |---------------------------------------------------------------------------|
+|HR01 |                                                                           |
+|HR02 |         Number of vehicles entering the parking area                      |
+|HR03 |          Number of vehicles leaving the parking area                      |
+|HR04 |         Parking charges for a vehicle                                     |
 
 
 LOW LEVEL REQUIREMENTS:
 -------------------------
 
-ID                  DESCRIPTION
-LR01             The system will ask input from the user whether it is a two wheeler or a four wheeler 
-LR02             Security is high 
+|ID     |                            DESCRIPTION                                                             |
+|------ |----------------------------------------------------------------------------------------------------|
+|LR01   |            The system will ask input from the user whether it is a two wheeler or a four wheeler   | 
+|LR02   |            Security is high                                                                        |
 
 
 

@@ -14,11 +14,7 @@ Ultrasonic sensor uses basic principle of sound propagation and reflection by ma
 
 DEFINING THE SYSTEM:
 ---------------------------
-
-
-
-
-
+Ultrasonic parking sensors use sound waves that are emitted from the sensor that beep when detecting vehicles or objects around the car, the beeping noise getting faster as you near it.Ultrasonic sensors work while stationary or while moving and use sound waves to detect objects in-front of the sensor. By pulsating sound in a high-frequency that reflects off near-by objects, a receiver can catch the reflected waves and calculate the distance to the detected objects.
 
 
 
@@ -54,7 +50,6 @@ WEAKNESS:
 STRENGTHS:
 -------------------
 *	Control over all sections and leave the focus on the system with a solitary administrator.
-*	Traffic estimation and computation of vehicle installment and charges
 *	Robotized System for controlling and management of parking area
 
 OPPORTUNITY:
@@ -73,10 +68,10 @@ HIGH LEVEL REQUIREMENTS:
 ----------------------------
 |ID   |       DESCRIPTION                                                         |
 |---- |---------------------------------------------------------------------------|
-|HR01 |                                                                           |
-|HR02 |                                                                           |
+|HR01 |Distance between the vehicle and the other object is detected.             |
+|HR02 | LED blinks as a detector.                                                 |
 |HR03 |                                                                           |
-|HR04 |                                                                           |
+
 
 
 LOW LEVEL REQUIREMENTS:
@@ -84,7 +79,7 @@ LOW LEVEL REQUIREMENTS:
 
 |ID     |                            DESCRIPTION                                                             |
 |------ |----------------------------------------------------------------------------------------------------|
-|LR01   |                                                                                                    | 
+|LR01   |     Provides security to the vehicle and prevents it from damage.                                  | 
 |LR02   |                                                                                                    |
 
 

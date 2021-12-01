@@ -47,15 +47,15 @@ SWOT ANALYSIS:
 ----------------------
 WEAKNESS:
 -------------------
-•	Regular maintenance
-•	Operation 
-•	Breakdown
+*	Regular maintenance
+*	Operation 
+*	Breakdown
 
 STRENGTHS:
 -------------------
-•	Control over all sections and leave the focus on the system with a solitary administrator.
-•	Traffic estimation and computation of vehicle installment and charges
-•	Robotized System for controlling and management of parking area
+*	Control over all sections and leave the focus on the system with a solitary administrator.
+*	Traffic estimation and computation of vehicle installment and charges
+*	Robotized System for controlling and management of parking area
 
 OPPORTUNITY:
 -------------------
@@ -63,7 +63,7 @@ Can be implemented in any vehicle.
 
 THREATS:
 --------------------------
-Syatem failure may cause collision of vehicles.
+System failure may cause collision of vehicles.
 
 
 

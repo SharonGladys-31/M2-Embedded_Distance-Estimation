@@ -3,7 +3,7 @@
 #include <util/delay.h>
 #include <string.h>
 #include <stdlib.h>
-
+#include <avr/interrupt.h>
 
 #define echoPin PD1
 #define trigPin PD2
@@ -28,7 +28,7 @@ ISR(TIMER1_OVF_vect)
 
 int main(void)
 {
-	setup;
+	setup();
     
 	for (;;) {
 		loop();
@@ -46,29 +46,52 @@ void printMessage()
 }
 
 void setup() {
-  pinMode(trigPin, OUTPUT); 
-  pinMode(echoPin, INPUT); 
-  Serial.begin(9600);
+  DDRA = 0x01;
+  PORTD = 0xFF;
+	
+  sei();
+  TIMSK = (1 << TOIE1);
+  TCCR1A = 0;
+	
   printf("Vehicle Parking Assistant");
   printMessage();
   delay(2000);
 }
 
+double measure_distance()
+{
+      PORTA &= (~(1 << trigPin));
+      _delay_us(2);
+      
+      PORTA |= (1 << trigPin);
+      _delay_us(10);
+      PORTA &= (~(1 << trigPin));
+	    
+      TCNT1 = 0;	
+      TCCR1B = 0x41;
+      TIFR = 1<<ICF1;
+      TIFR = 1<<TOV1;
+
+      while ((TIFR & (1 << ICF1)) == 0);
+      TCNT1 = 0;
+      TCCR1B = 0x01;
+      TIFR = 1<<ICF1;
+      TIFR = 1<<TOV1;
+      TimerOverflow = 0;
+
+      while ((TIFR & (1 << ICF1)) == 0);
+      count = ICR1 + (65535 * TimingCounter);
+      duration = (double)count;
+      distance = duration * SPEED_OF_SOUND_WAVE / 2;
+      return distance;
+}
+
 void loop() {
-  
-  if (Serial.available() > 0) {
+
     char input = Serial.read();
     if(input == 'r')
     {
-      digitalWrite(trigPin, LOW);
-      _delay_us(2);
-      
-      digitalWrite(trigPin, HIGH);
-      _delay_us(10);
-      digitalWrite(trigPin, LOW);
-      
-      duration = pulseIn(echoPin, HIGH);
-      distance = duration * SPEED_OF_SOUND_WAVE / 2;
+      distance = measure_distance();
       printf("Vehicle Gap Distance is: %f cm\n",distance);
       printMessage();
     }
@@ -83,16 +106,8 @@ void loop() {
         {
           break;
         }
-        
-        digitalWrite(trigPin, LOW);
-        _delay_us(2);
-        
-        digitalWrite(trigPin, HIGH);
-        _delay_us(10);
-        digitalWrite(trigPin, LOW);
-        
-        duration = pulseIn(echoPin, HIGH);
-        distance = duration * SPEED_OF_SOUND_WAVE / 2;
+
+        distance = measure_distance();
         printf("Vehicle Gap Distance is: %f cm\n",distance);
         delay(MEASURE_TIME_GAP);
       }
@@ -101,7 +116,6 @@ void loop() {
     else if(input == 't')
     {
       strcat(timeLimit, Serial.readString());
-      Serial.println(timeLimit);
       int begin_flag = 0;
       double timing = atof(timeLimit);
       while(true)
@@ -111,16 +125,8 @@ void loop() {
         {
           break;
         }
-        
-        digitalWrite(trigPin, LOW);
-        _delay_us(2);
-        
-        digitalWrite(trigPin, HIGH);
-        _delay_us(10);
-        digitalWrite(trigPin, LOW);
-        
-        duration = pulseIn(echoPin, HIGH);
-        distance = duration * SPEED_OF_SOUND_WAVE / 2;
+
+        distance = measure_distance();
         printf("Vehicle Gap Distance is: %f cm\n",distance);
         delay(MEASURE_TIME_GAP);
       }
@@ -130,7 +136,6 @@ void loop() {
     {
       printf("Invalid Input\n");
     }
-  }
   delay(1000);
 }
 

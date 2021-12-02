@@ -31,3 +31,6 @@ all:$(BUILD_DIR)
 $(BUILD_DIR):
 # Create directory to store the built files
 	mkdir $(BUILD_DIR)
+
+analysis: $(SRC)
+	cppcheck --enable=all $^

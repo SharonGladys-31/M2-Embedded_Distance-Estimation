@@ -35,11 +35,10 @@ void printMessage()
 }
 
 void setup() {
-  DDRA = 0x01;
   PORTD = 0xFF;
 	
   sei();
-  TIMSK = (1 << TOIE1);
+  TIMSK0 = (1 << TOIE1);
   TCCR1A = 0;
 	
   UCSR0B = (1<<RXEN0);

@@ -26,18 +26,6 @@ ISR(TIMER1_OVF_vect)
 	TimingCounter++;
 }
 
-int main(void)
-{
-	setup();
-    
-	for (;;) {
-		loop();
-	}
-        
-	return 0;
-}
-
-
 void printMessage()
 {
   printf("\nPress r to check distance\n");
@@ -124,3 +112,14 @@ void loop() {
   delay(1000);
 }
 
+
+int main(void)
+{
+	setup();
+    
+	for (;;) {
+		loop();
+	}
+        
+	return 0;
+}

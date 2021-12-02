@@ -1,5 +1,5 @@
 #include <avr/io.h>
-#include <String>
+#include <string.h>
 
 #define echoPin 2
 #define trigPin 3

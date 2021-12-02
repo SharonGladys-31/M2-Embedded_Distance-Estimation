@@ -3,6 +3,7 @@
 #include <util/delay.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdint.h>
 #include <avr/interrupt.h>
 
 #define echoPin PD1

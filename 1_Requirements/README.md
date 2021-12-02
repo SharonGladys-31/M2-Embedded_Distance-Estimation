@@ -68,7 +68,8 @@ HIGH LEVEL REQUIREMENTS:
 ----------------------------
 |ID   |       DESCRIPTION                                                         |
 |---- |---------------------------------------------------------------------------|
-|HR01 | Distance between the vehicle and the other object is detected.            |                                              |
+|HR01 | Distance between the vehicle and the other object is detected.            |
+|HR02 | Calculates the distance as the vehicle keeps moving                       |
 
 
 

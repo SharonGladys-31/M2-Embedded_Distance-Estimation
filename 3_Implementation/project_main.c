@@ -42,7 +42,6 @@ void printMessage()
 {
   printf("\nPress r to check distance\n");
   printf("Press i to check distance continously for 10 sec\n");
-  printf("Press t and mention time to check distance continously for specific time duration in sec\n"); 
 }
 
 void setup() {
@@ -52,6 +51,9 @@ void setup() {
   sei();
   TIMSK = (1 << TOIE1);
   TCCR1A = 0;
+	
+  UCSR0B = (1<<RXEN0);
+  UCSR0C = 0x06;
 	
   printf("Vehicle Parking Assistant");
   printMessage();
@@ -87,8 +89,10 @@ double measure_distance()
 }
 
 void loop() {
+	
+    while ( !(UCSR0A & (1<<RXC0)) );
 
-    char input = Serial.read();
+    char input = UDR0;
     if(input == 'r')
     {
       distance = measure_distance();
@@ -99,25 +103,6 @@ void loop() {
     {
       int begin_flag = 0;
       double timing = 10;
-      while(true)
-      {
-        begin_flag++;
-        if(begin_flag * MEASURE_TIME_GAP / 1000 > timing)
-        {
-          break;
-        }
-
-        distance = measure_distance();
-        printf("Vehicle Gap Distance is: %f cm\n",distance);
-        delay(MEASURE_TIME_GAP);
-      }
-      printMessage();
-    }
-    else if(input == 't')
-    {
-      strcat(timeLimit, Serial.readString());
-      int begin_flag = 0;
-      double timing = atof(timeLimit);
       while(true)
       {
         begin_flag++;

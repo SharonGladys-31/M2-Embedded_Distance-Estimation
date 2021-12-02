@@ -52,12 +52,12 @@ void setup() {
 
 double measure_distance()
 {
-      PORTA &= (~(1 << trigPin));
+      PORTD &= (~(1 << trigPin));
       _delay_us(2);
       
-      PORTA |= (1 << trigPin);
+      PORTD |= (1 << trigPin);
       _delay_us(10);
-      PORTA &= (~(1 << trigPin));
+      PORTD &= (~(1 << trigPin));
 	    
       TCNT1 = 0;	
       TCCR1B = 0x41;

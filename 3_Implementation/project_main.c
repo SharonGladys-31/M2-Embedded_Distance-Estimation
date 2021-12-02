@@ -14,25 +14,23 @@
 #define	delay	_delay_ms
 
 #define MEASURE_TIME_GAP  500
-string timeLimit;
+char timeLimit[50];
 
 long duration;
 int distance;
 
-
-
 void printMessage()
 {
-  Serial.println("\nPress r to check distance");
-  Serial.println("Press i to check distance continously for 10 sec");
-  Serial.println("Press t and mention time to check distance continously for specific time duration in sec"); 
+  printf("\nPress r to check distance\n");
+  printf("Press i to check distance continously for 10 sec\n");
+  printf("Press t and mention time to check distance continously for specific time duration in sec\n"); 
 }
 
 void setup() {
   pinMode(trigPin, OUTPUT); 
   pinMode(echoPin, INPUT); 
   Serial.begin(9600);
-  Serial.println("Vehicle Parking Assistant");
+  printf("Vehicle Parking Assistant");
   printMessage();
   delay(2000);
 }
@@ -52,9 +50,7 @@ void loop() {
       
       duration = pulseIn(echoPin, HIGH);
       distance = duration * SPEED_OF_SOUND_WAVE / 2;
-      Serial.print("Vehicle Gap Distance is: ");
-      Serial.print(distance);
-      Serial.println(" cm");
+      printf("Vehicle Gap Distance is: %f cm\n",distance);
       printMessage();
     }
     else if(input == 'i')
@@ -78,9 +74,7 @@ void loop() {
         
         duration = pulseIn(echoPin, HIGH);
         distance = duration * SPEED_OF_SOUND_WAVE / 2;
-        Serial.print("Vehicle Gap Distance is: ");
-        Serial.print(distance);
-        Serial.println(" cm");
+        printf("Vehicle Gap Distance is: %f cm\n",distance);
         delay(MEASURE_TIME_GAP);
       }
       printMessage();
@@ -108,16 +102,14 @@ void loop() {
         
         duration = pulseIn(echoPin, HIGH);
         distance = duration * SPEED_OF_SOUND_WAVE / 2;
-        Serial.print("Vehicle Gap Distance is: ");
-        Serial.print(distance);
-        Serial.println(" cm");
+        printf("Vehicle Gap Distance is: %f cm\n",distance);
         delay(MEASURE_TIME_GAP);
       }
       printMessage();
     }
     else
     {
-      Serial.println("Invalid Input");
+      printf("Invalid Input\n");
     }
   }
   delay(1000);

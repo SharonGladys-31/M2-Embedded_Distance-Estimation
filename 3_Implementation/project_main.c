@@ -1,9 +1,12 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <string.h>
+#include <stdlib.h>
 
-#define echoPin 2
-#define trigPin 3
+
+#define echoPin PD1
+#define trigPin PD2
 
 //340m/s = 0.034 (centimeter/microseconds)
 #define SPEED_OF_SOUND_WAVE 0.034
@@ -15,6 +18,8 @@ string timeLimit;
 
 long duration;
 int distance;
+
+
 
 void printMessage()
 {
@@ -39,10 +44,10 @@ void loop() {
     if(input == 'r')
     {
       digitalWrite(trigPin, LOW);
-      delay(2);
+      _delay_us(2);
       
       digitalWrite(trigPin, HIGH);
-      delay(10);
+      _delay_us(10);
       digitalWrite(trigPin, LOW);
       
       duration = pulseIn(echoPin, HIGH);
@@ -65,10 +70,10 @@ void loop() {
         }
         
         digitalWrite(trigPin, LOW);
-        delay(2);
+        _delay_us(2);
         
         digitalWrite(trigPin, HIGH);
-        delay(10);
+        _delay_us(10);
         digitalWrite(trigPin, LOW);
         
         duration = pulseIn(echoPin, HIGH);
@@ -95,10 +100,10 @@ void loop() {
         }
         
         digitalWrite(trigPin, LOW);
-        delay(2);
+        _delay_us(2);
         
         digitalWrite(trigPin, HIGH);
-        delay(10);
+        _delay_us(10);
         digitalWrite(trigPin, LOW);
         
         duration = pulseIn(echoPin, HIGH);

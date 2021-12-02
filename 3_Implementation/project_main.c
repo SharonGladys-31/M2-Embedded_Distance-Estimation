@@ -18,7 +18,7 @@
 char timeLimit[50];
 
 long duration;
-int distance;
+double distance;
 
 int TimingCounter = 0;
 

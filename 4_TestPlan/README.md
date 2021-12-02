@@ -19,9 +19,9 @@ LOW LEVEL TEST PLAN:
 
 
 
-| Test ID    | Description                          | Exp O/P     |Actual O/P | Type of test  |
-|---------   |---------------------------           |------------ |---------- | ------------- |
-|   L_01     | Provides security to the vehicle     |Sucessfull   |Sucessfull |Scenario based |
+| Test ID    | Description                                                                | Exp O/P     |Actual O/P | Type of test  |
+|---------   |---------------------------                                                 |------------ |---------- | ------------- |
+|   L_01     | Provides security to the vehicle and prevents it from damage               |Sucessfull   |Sucessfull |Scenario based |
 
 
 

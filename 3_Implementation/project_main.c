@@ -2,7 +2,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <string.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include <avr/interrupt.h>
 
 #define echoPin PD1

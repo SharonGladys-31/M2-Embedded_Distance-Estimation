@@ -68,7 +68,7 @@ double measure_distance()
       TCCR1B = 0x01;
       TIFR = 1<<ICF1;
       TIFR = 1<<TOV1;
-      TimerOverflow = 0;
+      TimingCounter = 0;
 
       while ((TIFR & (1 << ICF1)) == 0);
       count = ICR1 + (65535 * TimingCounter);

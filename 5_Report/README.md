@@ -86,5 +86,33 @@ SIMULATION:
 ![]![Screenshot (1811)](https://user-images.githubusercontent.com/94230272/144429662-4bfac3cf-e367-4ff9-8d5f-4db21e410eaf.png)
 
 
+TEST PLAN:
+
+HIGH LEVEL TEST PLAN:
+
+| Test ID    | Description                                                       | Exp I/P               | Exp O/P     |Actual O/P | Type of test     |
+|---------   |---------------------------                                        |-----------            |------------ |---------- | -------------    |
+|   H_01     |Distance between the vehicle and the other object is calculated    | Number                |Sucessfull   |Sucessfull |Requirement based |
+|   H_02     |Calculates distance as the vehicle keeps moving                    | Number                |Sucessfull   |Sucessfull |Requirement based |
+
+
+
+
+
+
+
+LOW LEVEL TEST PLAN:
+
+
+
+
+| Test ID    | Description                                                                | Exp O/P     |Actual O/P | Type of test  |
+|---------   |---------------------------                                                 |------------ |---------- | ------------- |
+|   L_01     | Provides security to the vehicle and prevents it from damage               |Sucessfull   |Sucessfull |Scenario based |
+
+
+
+
+
 
 

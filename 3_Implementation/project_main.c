@@ -36,6 +36,11 @@ void printMessage()
 
 void setup() {
   PORTD = 0xFF;
+  DDRB = 0;
+  DDRD = 0;
+
+  DDRB &= ~(1 << echoPin);
+  DDRD |=  (1 << trigPin)
 	
   sei();
   TIMSK0 = (1 << TOIE1);

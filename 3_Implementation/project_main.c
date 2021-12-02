@@ -40,7 +40,7 @@ void setup() {
   DDRD = 0;
 
   DDRB &= ~(1 << echoPin);
-  DDRD |=  (1 << trigPin)
+  DDRD |=  (1 << trigPin);
 	
   sei();
   TIMSK0 = (1 << TOIE1);
@@ -65,17 +65,17 @@ double measure_distance()
 	    
       TCNT1 = 0;	
       TCCR1B = 0x41;
-      TIFR = 1<<ICF1;
-      TIFR = 1<<TOV1;
+      TIFR1 = 1<<ICF1;
+      TIFR1 = 1<<TOV1;
 
-      while ((TIFR & (1 << ICF1)) == 0);
+      while ((TIFR1 & (1 << ICF1)) == 0);
       TCNT1 = 0;
       TCCR1B = 0x01;
-      TIFR = 1<<ICF1;
-      TIFR = 1<<TOV1;
+      TIFR1 = 1<<ICF1;
+      TIFR1 = 1<<TOV1;
       TimingCounter = 0;
 
-      while ((TIFR & (1 << ICF1)) == 0);
+      while ((TIFR1 & (1 << ICF1)) == 0);
       count = ICR1 + (65535 * TimingCounter);
       duration = (double)count;
       distance = duration * SPEED_OF_SOUND_WAVE / 2;

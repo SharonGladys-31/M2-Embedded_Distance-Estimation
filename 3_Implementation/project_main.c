@@ -19,6 +19,12 @@ char timeLimit[50];
 long duration;
 int distance;
 
+int TimingCounter = 0;
+
+ISR(TIMER1_OVF_vect)
+{
+	TimingCounter++;
+}
 
 int main(void)
 {
@@ -94,10 +100,10 @@ void loop() {
     }
     else if(input == 't')
     {
-      timeLimit = Serial.readString();
+      strcat(timeLimit, Serial.readString());
       Serial.println(timeLimit);
       int begin_flag = 0;
-      double timing = timeLimit.toInt();
+      double timing = atof(timeLimit);
       while(true)
       {
         begin_flag++;

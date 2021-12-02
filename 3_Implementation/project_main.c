@@ -92,7 +92,7 @@ void loop() {
     {
       int begin_flag = 0;
       double timing = 10;
-      while(true)
+      while(1)
       {
         begin_flag++;
         if(begin_flag * MEASURE_TIME_GAP / 1000 > timing)

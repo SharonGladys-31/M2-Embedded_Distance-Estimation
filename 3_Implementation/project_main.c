@@ -8,7 +8,7 @@
 #define SPEED_OF_SOUND_WAVE 0.034
 
 #define MEASURE_TIME_GAP  500
-String timeLimit;
+string timeLimit;
 
 long duration;
 int distance;

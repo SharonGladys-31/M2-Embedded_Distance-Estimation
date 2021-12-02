@@ -68,9 +68,8 @@ HIGH LEVEL REQUIREMENTS:
 ----------------------------
 |ID   |       DESCRIPTION                                                         |
 |---- |---------------------------------------------------------------------------|
-|HR01 | Distance between the vehicle and the other object is detected.            |
-|HR02 | LED blinks as a detector.                                                 |
-|HR03 |                                                                           |
+|HR01 | Distance between the vehicle and the other object is detected.            |                                              |
+
 
 
 
@@ -80,7 +79,7 @@ LOW LEVEL REQUIREMENTS:
 |ID     |                            DESCRIPTION                                                             |
 |------ |----------------------------------------------------------------------------------------------------|
 |LR01   |     Provides security to the vehicle and prevents it from damage.                                  | 
-|LR02   |                                                                                                    |
+
 
 
 

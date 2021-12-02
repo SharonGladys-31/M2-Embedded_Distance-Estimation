@@ -19,6 +19,19 @@ char timeLimit[50];
 long duration;
 int distance;
 
+
+int main(void)
+{
+	setup;
+    
+	for (;;) {
+		loop();
+	}
+        
+	return 0;
+}
+
+
 void printMessage()
 {
   printf("\nPress r to check distance\n");

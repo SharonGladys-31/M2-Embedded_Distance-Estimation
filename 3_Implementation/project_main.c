@@ -1,11 +1,15 @@
+#define F_CPU 1000000UL
+
 #include <avr/io.h>
-#include <SoftwareSerial.h>
+#include <util/delay.h>
 
 #define echoPin 2
 #define trigPin 3
 
 //340m/s = 0.034 (centimeter/microseconds)
 #define SPEED_OF_SOUND_WAVE 0.034
+
+#define	delay	_delay_ms
 
 #define MEASURE_TIME_GAP  500
 string timeLimit;
@@ -36,10 +40,10 @@ void loop() {
     if(input == 'r')
     {
       digitalWrite(trigPin, LOW);
-      delayMicroseconds(2);
+      delay(2);
       
       digitalWrite(trigPin, HIGH);
-      delayMicroseconds(10);
+      delay(10);
       digitalWrite(trigPin, LOW);
       
       duration = pulseIn(echoPin, HIGH);
@@ -62,10 +66,10 @@ void loop() {
         }
         
         digitalWrite(trigPin, LOW);
-        delayMicroseconds(2);
+        delay(2);
         
         digitalWrite(trigPin, HIGH);
-        delayMicroseconds(10);
+        delay(10);
         digitalWrite(trigPin, LOW);
         
         duration = pulseIn(echoPin, HIGH);
@@ -92,10 +96,10 @@ void loop() {
         }
         
         digitalWrite(trigPin, LOW);
-        delayMicroseconds(2);
+        delay(2);
         
         digitalWrite(trigPin, HIGH);
-        delayMicroseconds(10);
+        delay(10);
         digitalWrite(trigPin, LOW);
         
         duration = pulseIn(echoPin, HIGH);

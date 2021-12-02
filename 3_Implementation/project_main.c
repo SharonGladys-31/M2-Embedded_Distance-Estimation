@@ -1,5 +1,4 @@
 #include <avr/io.h>
-#include <Arduino.h>
 
 #define echoPin 2
 #define trigPin 3

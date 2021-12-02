@@ -1,4 +1,3 @@
-#include <SoftwareSerial.h>
 #include <String.h>
 
 #define echoPin 2

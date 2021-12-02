@@ -1,3 +1,5 @@
+[![Build](https://github.com/SharonGladys-31/M2-Embedded_Distance-Estimation/actions/workflows/makefile.yml/badge.svg)](https://github.com/SharonGladys-31/M2-Embedded_Distance-Estimation/actions/workflows/makefile.yml)
+
 # M2-Embedded_Distance-Estimation
 
 

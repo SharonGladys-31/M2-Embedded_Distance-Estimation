@@ -1,10 +1,11 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdint.h>
-#include <avr/interrupt.h>
+#include <stdlib.h>
 
 #define echoPin PD1
 #define trigPin PD2
@@ -15,7 +16,7 @@
 #define	delay	_delay_ms
 
 #define MEASURE_TIME_GAP  500
-char timeLimit[50];
+
 long count;
 long duration;
 double distance;

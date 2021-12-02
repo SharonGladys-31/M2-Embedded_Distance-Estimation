@@ -4,6 +4,8 @@ BUILD_DIR = Build
 
 SRC = project_main.c
 
+INC = -I inc
+
 ifdef OS	# WINDOWS
 # Correct the path based on OS
    FixPath = $(subst /,\,$1)
@@ -24,7 +26,7 @@ endif
 
 all:$(BUILD_DIR)
 # Compile the code and generate the ELF file
-	$(CC) -c -std=gnu99 -g -Wall -Os -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000  $(SRC) -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).elf)
+	$(CC) -c -std=gnu99 -g -Wall -Os -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000 $(INC) $(SRC) -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).elf)
 
 $(BUILD_DIR):
 # Create directory to store the built files

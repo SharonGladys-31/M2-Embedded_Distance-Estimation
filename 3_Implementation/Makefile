@@ -2,7 +2,7 @@ PROJ_NAME = Vehicle
 
 BUILD_DIR = Build
 
-SRC = project_main.cc
+SRC = project_main.c
 
 INC = -I inc
 

@@ -1,3 +1,6 @@
+#include <SoftwareSerial.h>
+#include <String.h>
+
 #define echoPin 2
 #define trigPin 3
 

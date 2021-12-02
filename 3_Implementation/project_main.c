@@ -16,7 +16,7 @@
 
 #define MEASURE_TIME_GAP  500
 char timeLimit[50];
-
+long count;
 long duration;
 double distance;
 

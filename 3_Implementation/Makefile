@@ -26,7 +26,7 @@ endif
 
 all:$(BUILD_DIR)
 # Compile the code and generate the ELF file
-	$(CC) -c -std=gnu99 -g -Wall -Os -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000 $(INC) $(SRC) -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).elf)
+	$(CC) -c -g -Wall -Os -ffunction-sections -fdata-sections -mmcu=atmega328p -DF_CPU=16000000 $(INC) $(SRC) -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).elf)
 
 $(BUILD_DIR):
 # Create directory to store the built files

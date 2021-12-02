@@ -1,4 +1,5 @@
 #include <avr/io.h>
+#include <String>
 
 #define echoPin 2
 #define trigPin 3
